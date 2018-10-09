@@ -224,7 +224,7 @@ return [
      ],
 
      'media' => [
-          'keep_filename' => false,
+          'keep_filename' => true,
       ],
 
 ];

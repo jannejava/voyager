@@ -187,7 +187,8 @@ class VoyagerMediaController extends Controller
                 'image/svg+xml',
             ];
             
-            $baseOriginalFilename = basename($request->file->getClientOriginalName());
+            $parts = pathinfo(basename($request->file->getClientOriginalName()));
+            $baseOriginalFilename = str_slug($parts['filename']) . '-' . strtolower(str_random(4)) . '.' . $parts['extension'];
 
             if (config('voyager.media.keep_filename')
                  && !Storage::disk($this->filesystem)->exists("{$request->upload_path}/{$baseOriginalFilename}")
