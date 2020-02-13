@@ -1,4 +1,4 @@
-<textarea class="form-control richTextBox" name="{{ $row->field }}" id="richtext{{ $row->field }}">
+<textarea style="height: 200px;" class="form-control richTextBox" name="{{ $row->field }}" id="richtext{{ $row->field }}">
     @if(isset($dataTypeContent->{$row->field}))
         {{ old($row->field, $dataTypeContent->{$row->field}) }}
     @else
